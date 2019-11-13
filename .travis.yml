@@ -5,11 +5,12 @@ os:
 
 install:
   - bash ci/install-sbcl.bash
-  - which git
-# Fake a version  
-  - echo '"1.0.99.999"' > version.lisp-expr
   
 script:
+  - which git
+# Fake a version  
+#  - echo '"1.0.99.999"' > version.lisp-expr
+  - sh echo $PATH
   - sh ./make.sh
   - cd tests && sh run-tests.sh
 
