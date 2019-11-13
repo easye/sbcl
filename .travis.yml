@@ -11,6 +11,7 @@ script:
   - which git
   - echo $PATH
   - sh -c 'echo $PATH'
+  - echo 'PATH=$PATH:/usr/local/bin' >> ~/.profile
   - sh ./make.sh
   - cd tests && sh run-tests.sh
 
