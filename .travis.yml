@@ -8,8 +8,8 @@ install:
   
 script:
 # make.sh can't seem to generate version, so do it manually
-  - bash generate-version.sh
-  - PATH=$PATH:/usr/local/bin sh ./make.sh
+  - PATH=$PATH:/usr/local/bin && which git && PATH=$PATH bash generate-version.sh
+  - sh ./make.sh
   - cd tests && sh run-tests.sh
 
   
