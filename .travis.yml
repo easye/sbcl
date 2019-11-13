@@ -7,8 +7,8 @@ install:
   - bash ci/install-sbcl.bash
   
 script:
-# make.sh can't seem to generate version, so do it manually
-  - PATH=$PATH:/usr/local/bin && which git && PATH=$PATH bash generate-version.sh
+# make.sh can't seem to find git in its path, so we get medieval 
+  - ln $(which git) /usr/bin/git
   - sh ./make.sh
   - cd tests && sh run-tests.sh
 
