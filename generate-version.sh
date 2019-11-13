@@ -13,6 +13,7 @@ git_available_p() {
 
 echo PATH=$PATH
 ls -l /usr/local/bin/git
+git version
 
 AVAILABLE=`git_available_p`
 if [ -f version.lisp-expr -a -z "$AVAILABLE" ]
