@@ -7,8 +7,8 @@ install:
   - bash ci/install-sbcl.bash
   
 script:
-# make.sh can't seem to invoke git describe, so do it manually
-  - git describe > version.lisp-expr
+# make.sh can't seem to generate version, so do it manually
+  - bash generate-version.sh
   - PATH=$PATH:/usr/local/bin sh ./make.sh
   - cd tests && sh run-tests.sh
 
