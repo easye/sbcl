@@ -11,6 +11,8 @@ git_available_p() {
     fi
 }
 
+echo PATH=$PATH
+
 AVAILABLE=`git_available_p`
 if [ -f version.lisp-expr -a -z "$AVAILABLE" ]
 then
