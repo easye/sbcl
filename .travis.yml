@@ -7,9 +7,8 @@ install:
   - bash ci/install-sbcl.bash
   
 script:
-  - which git
-# Fake a version  
-#  - echo '"1.0.99.999"' > version.lisp-expr
+# make.sh can't seem to invoke git describe, so do it manually
+  - git describe > version.lisp-expr
   - PATH=$PATH:/usr/local/bin sh ./make.sh
   - cd tests && sh run-tests.sh
 
