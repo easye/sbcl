@@ -10,8 +10,7 @@ script:
   - which git
 # Fake a version  
 #  - echo '"1.0.99.999"' > version.lisp-expr
-  - sh echo $PATH
-  - sh ./make.sh
+  - PATH=$PATH:/usr/local/bin sh ./make.sh
   - cd tests && sh run-tests.sh
 
   
