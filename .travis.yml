@@ -1,5 +1,11 @@
 language: c
 
+os:
+  - osx
+
+install:
+  - bash ci/install-sbcl.bash
+  
 script:
   - sh ./make.sh
   - cd tests && sh run-tests.sh
