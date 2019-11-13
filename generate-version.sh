@@ -1,8 +1,13 @@
 #!/bin/sh -x
 
 git_available_p() {
-    command -v git > /dev/null
-    echo $?
+    # DEBUG
+    echo PATH=$PATH
+    ls -l /usr/local/bin/git
+    git show-ref
+    git rev-parse
+    # END DEBUG
+
     # Check that (1) we have git (2) this is a git tree.
     if ( command -v git >/dev/null && git describe >/dev/null 2>/dev/null && \
        test -f `git rev-parse --show-toplevel`/run-sbcl.sh)
@@ -12,9 +17,6 @@ git_available_p() {
         echo ""
     fi
 }
-
-echo PATH=$PATH
-ls -l /usr/local/bin/git
 
 
 
