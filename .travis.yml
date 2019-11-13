@@ -8,7 +8,7 @@ install:
   
 script:
 # make.sh can't seem to find git in its path, so we get medieval 
-  - ln $(which git) /usr/bin/git
+  - sudo ln $(which git) /usr/bin/git
   - sh ./make.sh
   - cd tests && sh run-tests.sh
 
