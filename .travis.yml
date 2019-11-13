@@ -1,0 +1,7 @@
+language: c
+
+script:
+  - sh ./make.sh
+  - cd tests && sh run-tests.sh
+
+  
